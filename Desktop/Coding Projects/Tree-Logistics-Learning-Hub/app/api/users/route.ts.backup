@@ -1,0 +1,114 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { db } from '@/lib/db'
+import { z } from 'zod'
+
+const createUserSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  role: z.enum(['ADMIN', 'INSPECTOR', 'DRIVER']),
+  status: z.enum(['ACTIVE', 'INACTIVE']),
+})
+
+export async function POST(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+    
+    if (!session?.user || session.user.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const body = await request.json()
+    const validatedData = createUserSchema.parse(body)
+
+    // Check if user with email already exists
+    const existingUser = await db.user.findUnique({
+      where: { email: validatedData.email }
+    })
+
+    if (existingUser) {
+      return NextResponse.json(
+        { error: 'User with this email already exists' },
+        { status: 400 }
+      )
+    }
+
+    // Create the user
+    const newUser = await db.user.create({
+      data: {
+        name: validatedData.name,
+        email: validatedData.email,
+        role: validatedData.role,
+        status: validatedData.status,
+        emailVerified: null, // Will be set when they verify their email
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        status: true,
+        createdAt: true,
+        _count: {
+          select: {
+            documents: true,
+            enrollments: true,
+          },
+        },
+      },
+    })
+
+    return NextResponse.json(newUser, { status: 201 })
+  } catch (error) {
+    console.error('[API ERROR] Failed to create user:', error)
+    
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: error.errors },
+        { status: 400 }
+      )
+    }
+
+    return NextResponse.json(
+      { error: 'Failed to create user' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function GET(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+    
+    if (!session?.user || session.user.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const users = await db.user.findMany({
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        status: true,
+        createdAt: true,
+        _count: {
+          select: {
+            documents: true,
+            enrollments: true,
+          },
+        },
+      },
+    })
+
+    return NextResponse.json(users)
+  } catch (error) {
+    console.error('[API ERROR] Failed to fetch users:', error)
+    return NextResponse.json(
+      { error: 'Failed to fetch users' },
+      { status: 500 }
+    )
+  }
+}

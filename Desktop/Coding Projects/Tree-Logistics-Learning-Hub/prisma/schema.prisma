@@ -1,0 +1,567 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  INSPECTOR
+  DRIVER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+  ARCHIVED
+}
+
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWED
+}
+
+enum TaxClass {
+  CLASS_1
+  CLASS_2
+  CLASS_3
+  CLASS_4
+  CLASS_5
+  CLASS_6
+}
+
+enum ChurchAffiliation {
+  NONE
+  ROMAN_CATHOLIC
+  EVANGELICAL
+  OTHER
+}
+
+enum ChildFactor {
+  ZERO
+  HALF
+  ONE
+}
+
+enum DocumentType {
+  DRIVERS_LICENSE_FRONT
+  DRIVERS_LICENSE_BACK
+  ID_CARD_FRONT
+  ID_CARD_BACK
+  WORK_PERMIT_FRONT
+  WORK_PERMIT_BACK
+  WORK_PERMIT_ADDITIONAL
+  PASSPORT
+  REGISTRATION_CERTIFICATE
+  SELFIE
+}
+
+enum DocumentStatus {
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum EnrollmentStatus {
+  ASSIGNED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+}
+
+enum OnboardingStepStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  BLOCKED
+}
+
+enum AchievementType {
+  COURSE_COMPLETION
+  QUIZ_PERFECT_SCORE
+  ON_TIME_UPLOAD
+  LEADERBOARD_TOP_3
+  SAFETY_PRO
+}
+
+enum NotificationChannel {
+  EMAIL
+  SMS
+  IN_APP
+}
+
+model User {
+  id            String     @id @default(cuid())
+  email         String     @unique
+  emailVerified DateTime?
+  name          String?
+  password      String?
+  role          Role       @default(DRIVER)
+  status        UserStatus @default(ACTIVE)
+  locale        String     @default("en")
+  phone         String?
+  twoFactorEnabled Boolean @default(false)
+  twoFactorSecret  String?
+  // Archival fields
+  archivedAt    DateTime?
+  archivedBy    String?
+  archiveReason String?   @db.Text
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  accounts         Account[]
+  sessions         Session[]
+  driverProfile    DriverProfile?
+  documents        Document[]
+  enrollments      Enrollment[]
+  quizAttempts     QuizAttempt[]
+  achievements     Achievement[]
+  leaderboardEntries LeaderboardSnapshot[]
+  notifications    Notification[]
+  auditLogsAsActor AuditLog[]           @relation("ActorAuditLogs")
+  reviewedDocuments Document[]          @relation("ReviewedDocuments")
+  messages         Message[]
+  readReceipts     MessageReadReceipt[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model DriverProfile {
+  id                      String          @id @default(cuid())
+  userId                  String          @unique
+  user                    User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Master data
+  dateOfBirth             DateTime?
+  placeOfBirth            String?
+  placeOfBirthDe          String?
+  nationality             String?
+  nationalityDe           String?
+  maritalStatus           MaritalStatus?
+  healthInsuranceCompany  String?
+  healthInsuranceCompanyDe String?
+  socialSecurityNumber    String?        @db.Text // encrypted
+
+  // Tax data
+  taxClass                TaxClass?
+  taxIdentificationNumber String?        @db.Text // encrypted
+  churchAffiliation       ChurchAffiliation?
+  childAllowance          Boolean        @default(false)
+  childFactor             ChildFactor    @default(ZERO)
+  otherEmployment         Boolean        @default(false)
+  isMainEmployer          Boolean        @default(true)
+
+  // Bank data
+  bankName                String?
+  bankNameDe              String?
+  iban                    String?        @db.Text // encrypted
+  accountHolder           String?
+  accountHolderDe         String?
+  bic                     String?
+
+  children                Child[]
+  createdAt               DateTime       @default(now())
+  updatedAt               DateTime       @updatedAt
+
+  @@map("driver_profiles")
+}
+
+model Child {
+  id               String        @id @default(cuid())
+  driverProfileId  String
+  driverProfile    DriverProfile @relation(fields: [driverProfileId], references: [id], onDelete: Cascade)
+  name             String
+  dateOfBirth      DateTime
+  createdAt        DateTime      @default(now())
+
+  @@map("children")
+}
+
+model Document {
+  id          String         @id @default(cuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        DocumentType
+  urls        String[]       // Array of S3 URLs
+  status      DocumentStatus @default(PENDING_REVIEW)
+  expiryDate  DateTime?
+  reviewerId  String?
+  reviewer    User?          @relation("ReviewedDocuments", fields: [reviewerId], references: [id])
+  reviewedAt  DateTime?
+  notes       String?        @db.Text
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([userId, status])
+  @@index([status, expiryDate])
+  @@map("documents")
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  titleDe     String?
+  description String?      @db.Text
+  descriptionDe String?    @db.Text
+  order       Int          @default(0)
+  isActive    Boolean      @default(true)
+  pointsReward Int         @default(0)
+  modules     Module[]
+  enrollments Enrollment[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("courses")
+}
+
+model Module {
+  id          String   @id @default(cuid())
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title       String
+  titleDe     String?
+  description String?  @db.Text
+  descriptionDe String? @db.Text
+  order       Int      @default(0)
+  lessons     Lesson[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("modules")
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  moduleId    String
+  module      Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title       String
+  titleDe     String?
+  contentType String   // video, pdf, text
+  contentUrl  String?  @db.Text
+  content     String?  @db.Text // For text lessons
+  contentDe   String?  @db.Text
+  order       Int      @default(0)
+  durationMinutes Int? // For videos
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("lessons")
+}
+
+model Quiz {
+  id          String        @id @default(cuid())
+  title       String
+  titleDe     String?
+  description String?       @db.Text
+  descriptionDe String?     @db.Text
+  courseId    String?
+  timeLimit   Int?          // in minutes
+  passingScore Int          @default(70)
+  showFeedback Boolean      @default(true)
+  pointsReward Int          @default(0)
+  questions   Question[]
+  attempts    QuizAttempt[]
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("quizzes")
+}
+
+model Question {
+  id          String   @id @default(cuid())
+  quizId      String
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  text        String   @db.Text
+  textDe      String?  @db.Text
+  type        String   // MCQ, TRUE_FALSE
+  order       Int      @default(0)
+  options     Option[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("questions")
+}
+
+model Option {
+  id         String   @id @default(cuid())
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  text       String   @db.Text
+  textDe     String?  @db.Text
+  isCorrect  Boolean  @default(false)
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  @@map("options")
+}
+
+model Enrollment {
+  id          String           @id @default(cuid())
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId    String
+  course      Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  status      EnrollmentStatus @default(ASSIGNED)
+  assignedAt  DateTime         @default(now())
+  dueAt       DateTime?
+  startedAt   DateTime?
+  completedAt DateTime?
+  score       Float?
+  timeSpentMinutes Int         @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@unique([userId, courseId])
+  @@index([userId, status])
+  @@map("enrollments")
+}
+
+model QuizAttempt {
+  id         String   @id @default(cuid())
+  quizId     String
+  quiz       Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startedAt  DateTime @default(now())
+  finishedAt DateTime?
+  score      Float?
+  answers    Json     // { questionId: selectedOptionId }
+  passed     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@index([userId, quizId])
+  @@map("quiz_attempts")
+}
+
+model Achievement {
+  id        String          @id @default(cuid())
+  userId    String
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      AchievementType
+  title     String
+  titleDe   String?
+  description String?
+  descriptionDe String?
+  points    Int             @default(0)
+  badgeIcon String?
+  awardedAt DateTime        @default(now())
+  metadata  Json?           // Additional context
+
+  @@index([userId, awardedAt])
+  @@map("achievements")
+}
+
+model LeaderboardSnapshot {
+  id       String   @id @default(cuid())
+  userId   String
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  period   String   // "30_days", "all_time"
+  points   Int      @default(0)
+  rank     Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, period])
+  @@index([period, points])
+  @@map("leaderboard_snapshots")
+}
+
+model Announcement {
+  id          String   @id @default(cuid())
+  title       String
+  titleDe     String?
+  body        String   @db.Text
+  bodyDe      String?  @db.Text
+  audience    Role[]   // Which roles can see this
+  publishedAt DateTime @default(now())
+  expiresAt   DateTime?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([isActive, publishedAt])
+  @@map("announcements")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String
+  actor     User     @relation("ActorAuditLogs", fields: [actorId], references: [id], onDelete: Cascade)
+  action    String   // VIEW_PII, UPDATE_PII, APPROVE_DOCUMENT, REJECT_DOCUMENT, CHANGE_ROLE, etc.
+  entity    String   // User, Document, DriverProfile, etc.
+  entityId  String
+  diff      Json?    // Before/after changes
+  ipAddress String?
+  userAgent String?  @db.Text
+  createdAt DateTime @default(now())
+
+  @@index([actorId, createdAt])
+  @@index([entity, entityId])
+  @@map("audit_logs")
+}
+
+model Notification {
+  id        String             @id @default(cuid())
+  userId    String
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  channel   NotificationChannel
+  template  String
+  subject   String?
+  body      String             @db.Text
+  bodyDe    String?            @db.Text
+  sentAt    DateTime?
+  readAt    DateTime?
+  metadata  Json?
+  createdAt DateTime           @default(now())
+
+  @@index([userId, readAt])
+  @@index([sentAt])
+  @@map("notifications")
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  senderId    String
+  sender      User     @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  recipientRole Role?  // If null, broadcast to all
+  subject     String
+  subjectDe   String?
+  body        String   @db.Text
+  bodyDe      String?  @db.Text
+  sentAt      DateTime @default(now())
+  readReceipts MessageReadReceipt[]
+  createdAt   DateTime @default(now())
+
+  @@index([sentAt])
+  @@map("messages")
+}
+
+model MessageReadReceipt {
+  id        String   @id @default(cuid())
+  messageId String
+  message   Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  readAt    DateTime @default(now())
+
+  @@unique([messageId, userId])
+  @@map("message_read_receipts")
+}
+
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value Json
+  updatedAt DateTime @updatedAt
+
+  @@map("settings")
+}
+
+model OnboardingProgress {
+  id              String               @id @default(cuid())
+  userId          String               @unique
+  profileStep     OnboardingStepStatus @default(NOT_STARTED)
+  dataFormsStep   OnboardingStepStatus @default(NOT_STARTED)
+  documentsStep   OnboardingStepStatus @default(NOT_STARTED)
+  coursesStep     OnboardingStepStatus @default(NOT_STARTED)
+  assessmentStep  OnboardingStepStatus @default(NOT_STARTED)
+  reviewStep      OnboardingStepStatus @default(NOT_STARTED)
+  approvalStep    OnboardingStepStatus @default(NOT_STARTED)
+  completedAt     DateTime?
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+
+  @@map("onboarding_progress")
+}
+
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String   @db.Text
+  questionDe  String?  @db.Text
+  answer      String   @db.Text
+  answerDe    String?  @db.Text
+  category    String
+  categoryDe  String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("faqs")
+}
+
+model ApiKey {
+  id          String   @id @default(cuid())
+  name        String
+  key         String   @unique
+  scopes      String[] // Array of allowed actions
+  isActive    Boolean  @default(true)
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("api_keys")
+}
+
+model WebhookEndpoint {
+  id          String   @id @default(cuid())
+  url         String
+  events      String[] // user_approved, doc_expired, course_completed, etc.
+  secret      String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("webhook_endpoints")
+}
+
