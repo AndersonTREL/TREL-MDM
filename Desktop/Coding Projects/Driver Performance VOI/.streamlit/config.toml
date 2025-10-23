@@ -1,0 +1,17 @@
+[theme]
+# Primary colors
+primaryColor = "#4B6BFB"
+backgroundColor = "#0f172a"
+secondaryBackgroundColor = "#1e293b"
+textColor = "#f8fafc"
+
+# Font
+font = "Inter"
+
+[server]
+# Enable file watching for development
+fileWatcherType = "auto"
+
+[browser]
+# Disable the "Get started" popup
+gatherUsageStats = false

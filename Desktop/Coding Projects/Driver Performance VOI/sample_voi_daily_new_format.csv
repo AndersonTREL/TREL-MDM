@@ -1,0 +1,5 @@
+employee_email,date,city,tasks_per_hour,nr_tasks,nr_battery_swaps,nr_bonus_swaps,nr_deploys,nr_infqs,nr_rebalances,nr_reparks,nr_rescues,nr_transports,shift_area_multitask_rate,shift_vehicle_multitask_rate,shift_bonus_fulfilment_ratio,drop_compliance
+fl.stefan@tree-logistics.de,2025-10-15,flensburg,12.08,20,16,4,0,0,0,0,0,0,,,0,
+anna.mueller@company.com,2025-10-15,kiel,8.5,15,12,2,1,0,0,0,0,0,0.85,1.2,0.95,
+max.schmidt@company.com,2025-10-15,rostock,10.2,18,14,3,0,1,0,0,0,0,0.75,1.1,0.88,
+lisa.weber@company.com,2025-10-15,schwerin,9.8,16,13,2,0,0,1,0,0,0,0.80,1.0,0.92,

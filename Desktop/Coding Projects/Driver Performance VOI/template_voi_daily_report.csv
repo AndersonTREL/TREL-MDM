@@ -1,0 +1,10 @@
+Driver,City,Date,Task Type,Count,Duration Minutes,Battery Usage,Bonus_Penalties
+Example Driver,Kiel,2025-10-15,battery_swap,0,0,0,0
+Example Driver,Kiel,2025-10-15,battery_bonus_swap,0,0,0,0
+Example Driver,Kiel,2025-10-15,multi_task,0,0,0,0
+Example Driver,Kiel,2025-10-15,deploy,0,0,0,0
+Example Driver,Kiel,2025-10-15,quality_check,0,0,0,0
+Example Driver,Kiel,2025-10-15,rescue,0,0,0,0
+Example Driver,Kiel,2025-10-15,repark,0,0,0,0
+Example Driver,Kiel,2025-10-15,rebalance,0,0,0,0
+Example Driver,Kiel,2025-10-15,transport,0,0,0,0

@@ -1,0 +1,25 @@
+Driver,City,Date,Task Type,Count,Duration Minutes,Battery Usage,Bonus_Penalties
+Anna Müller,Kiel,2025-10-04,battery_swap,43,180,85.2,120.5
+Max Schmidt,Flensburg,2025-10-04,battery_swap,32,150,72.8,95.3
+Tom Weber,Rostock,2025-10-04,battery_swap,56,220,98.7,145.2
+Sophie Becker,Schwerin,2025-10-04,battery_swap,39,165,78.4,105.7
+Anna Müller,Kiel,2025-10-04,quality_check,16,45,12.3,25.0
+Max Schmidt,Flensburg,2025-10-04,quality_check,11,35,8.7,18.5
+Tom Weber,Rostock,2025-10-04,quality_check,18,55,15.2,32.1
+Sophie Becker,Schwerin,2025-10-04,quality_check,13,40,10.8,22.3
+Anna Müller,Kiel,2025-10-04,rebalance,8,60,15.5,30.0
+Max Schmidt,Flensburg,2025-10-04,rebalance,5,45,12.1,22.5
+Tom Weber,Rostock,2025-10-04,rebalance,10,75,18.9,37.5
+Sophie Becker,Schwerin,2025-10-04,rebalance,6,50,14.2,27.8
+Anna Müller,Kiel,2025-10-04,transport,3,90,25.8,45.0
+Max Schmidt,Flensburg,2025-10-04,transport,2,75,20.3,35.5
+Tom Weber,Rostock,2025-10-04,transport,4,105,28.7,52.5
+Sophie Becker,Schwerin,2025-10-04,transport,2,80,22.1,40.0
+Lisa Wagner,Kiel,2025-10-04,deploy,5,30,8.5,15.0
+Peter Klein,Flensburg,2025-10-04,deploy,3,25,7.2,12.5
+Emma Fischer,Rostock,2025-10-04,deploy,7,35,9.8,17.5
+Jan Hoffmann,Schwerin,2025-10-04,deploy,4,28,8.0,14.0
+Lisa Wagner,Kiel,2025-10-04,rescue,2,45,12.5,22.5
+Peter Klein,Flensburg,2025-10-04,rescue,1,35,9.8,17.5
+Emma Fischer,Rostock,2025-10-04,rescue,3,55,15.2,27.5
+Jan Hoffmann,Schwerin,2025-10-04,rescue,2,40,11.3,20.0

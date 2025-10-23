@@ -1,0 +1,2 @@
+employee_or_month,city,tasks_per_hour,nr_tasks,nr_battery_swaps,nr_bonus_swaps,nr_deploys,nr_infqs,nr_rebalances,nr_reparks,nr_rescues,nr_transports,shift_area_multitask_rate,shift_vehicle_mu,shift_bonus_1,drop_compliance
+Example Driver,Kiel,7.85,404,319,66,0,0,37,0,0,23,0.85,1.2,120.5,0.95

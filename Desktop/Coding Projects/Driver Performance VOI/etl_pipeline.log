@@ -1,0 +1,688 @@
+2025-10-05 14:06:35,481 - INFO - Starting full ETL pipeline...
+2025-10-05 14:06:35,481 - INFO - Initializing database...
+2025-10-05 14:06:35,501 - ERROR - Error executing statement: near "AS": syntax error
+2025-10-05 14:06:35,501 - ERROR - Statement: -- Populate calendar dimension for the next 2 years
+INSERT INTO dim_calendar (date_key, date, day_of...
+2025-10-05 14:06:35,501 - INFO - Database initialized successfully
+2025-10-05 14:06:35,501 - INFO - Loading staging data...
+2025-10-05 14:06:35,501 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:06:35,506 - ERROR - Error loading data/raw/manual_shift_report_oct_2024.csv: table stg_manual_shift_reports has no column named qualitätskontrolle
+2025-10-05 14:06:35,507 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:06:35,509 - ERROR - Error loading data/raw/voi_daily_report_2024-10-05.csv: table stg_voi_daily has no column named bonus/penalties
+2025-10-05 14:06:35,509 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:06:35,512 - ERROR - Error loading data/raw/voi_monthly_report_september_2024.csv: table stg_voi_monthly has no column named bonus/penalties
+2025-10-05 14:06:35,512 - INFO - Staging data loading completed
+2025-10-05 14:06:35,512 - INFO - Transforming dimensions...
+2025-10-05 14:06:35,513 - INFO - Dimensions transformation completed
+2025-10-05 14:06:35,513 - INFO - Transforming facts...
+2025-10-05 14:06:35,515 - INFO - Facts transformation completed
+2025-10-05 14:06:35,515 - INFO - Validating data...
+2025-10-05 14:06:35,516 - INFO - Data validation completed
+2025-10-05 14:06:35,517 - INFO - ETL pipeline completed successfully in 0:00:00.035553
+2025-10-05 14:07:02,971 - INFO - Starting full ETL pipeline...
+2025-10-05 14:07:02,971 - INFO - Initializing database...
+2025-10-05 14:07:02,991 - INFO - Database initialized successfully
+2025-10-05 14:07:02,991 - INFO - Loading staging data...
+2025-10-05 14:07:02,992 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:07:03,001 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:07:03,001 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:07:03,004 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:07:03,005 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:07:03,008 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:07:03,008 - INFO - Staging data loading completed
+2025-10-05 14:07:03,008 - INFO - Transforming dimensions...
+2025-10-05 14:07:03,010 - INFO - Dimensions transformation completed
+2025-10-05 14:07:03,010 - INFO - Transforming facts...
+2025-10-05 14:07:03,021 - INFO - Facts transformation completed
+2025-10-05 14:07:03,022 - INFO - Validating data...
+2025-10-05 14:07:03,023 - INFO - Data validation completed
+2025-10-05 14:07:03,023 - INFO - ETL pipeline completed successfully in 0:00:00.051422
+2025-10-05 14:07:42,266 - INFO - Starting full ETL pipeline...
+2025-10-05 14:07:42,267 - INFO - Initializing database...
+2025-10-05 14:07:42,292 - INFO - Database initialized successfully
+2025-10-05 14:07:42,292 - INFO - Loading staging data...
+2025-10-05 14:07:42,292 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:07:42,309 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:07:42,310 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:07:42,315 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:07:42,315 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:07:42,324 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:07:42,324 - INFO - Staging data loading completed
+2025-10-05 14:07:42,324 - INFO - Transforming dimensions...
+2025-10-05 14:07:42,325 - INFO - Dimensions transformation completed
+2025-10-05 14:07:42,326 - INFO - Transforming facts...
+2025-10-05 14:07:42,337 - INFO - Facts transformation completed
+2025-10-05 14:07:42,337 - INFO - Validating data...
+2025-10-05 14:07:42,338 - INFO - Data validation completed
+2025-10-05 14:07:42,338 - INFO - ETL pipeline completed successfully in 0:00:00.071280
+2025-10-05 14:10:07,883 - INFO - Starting full ETL pipeline...
+2025-10-05 14:10:07,883 - INFO - Loading staging data...
+2025-10-05 14:10:07,884 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:10:07,894 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:10:07,895 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:10:07,899 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:10:07,899 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:10:07,903 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:10:07,903 - INFO - Staging data loading completed
+2025-10-05 14:10:07,903 - INFO - Transforming dimensions...
+2025-10-05 14:10:07,905 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 14:10:25,061 - INFO - Starting full ETL pipeline...
+2025-10-05 14:10:25,061 - INFO - Initializing database...
+2025-10-05 14:10:25,080 - INFO - Database initialized successfully
+2025-10-05 14:10:25,080 - INFO - Loading staging data...
+2025-10-05 14:10:25,081 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:10:25,089 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:10:25,089 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:10:25,093 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:10:25,093 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:10:25,096 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:10:25,096 - INFO - Staging data loading completed
+2025-10-05 14:10:25,096 - INFO - Transforming dimensions...
+2025-10-05 14:10:25,098 - INFO - Dimensions transformation completed
+2025-10-05 14:10:25,099 - INFO - Transforming facts...
+2025-10-05 14:10:25,110 - INFO - Facts transformation completed
+2025-10-05 14:10:25,110 - INFO - Validating data...
+2025-10-05 14:10:25,111 - INFO - Data validation completed
+2025-10-05 14:10:25,111 - INFO - ETL pipeline completed successfully in 0:00:00.050128
+2025-10-05 14:13:03,989 - INFO - Starting full ETL pipeline...
+2025-10-05 14:13:03,990 - INFO - Initializing database...
+2025-10-05 14:13:04,009 - INFO - Database initialized successfully
+2025-10-05 14:13:04,009 - INFO - Loading staging data...
+2025-10-05 14:13:04,010 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:13:04,017 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:13:04,018 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:13:04,020 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:13:04,020 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:13:04,023 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:13:04,023 - INFO - Staging data loading completed
+2025-10-05 14:13:04,023 - INFO - Transforming dimensions...
+2025-10-05 14:13:04,025 - INFO - Dimensions transformation completed
+2025-10-05 14:13:04,025 - INFO - Transforming facts...
+2025-10-05 14:13:04,037 - INFO - Facts transformation completed
+2025-10-05 14:13:04,037 - INFO - Validating data...
+2025-10-05 14:13:04,038 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 14:13:04,038 - INFO - Data validation completed
+2025-10-05 14:13:04,038 - INFO - ETL pipeline completed successfully in 0:00:00.048023
+2025-10-05 14:16:17,883 - INFO - Starting full ETL pipeline...
+2025-10-05 14:16:17,884 - INFO - Loading staging data...
+2025-10-05 14:16:17,885 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:16:17,894 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:16:17,894 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 14:16:17,897 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 14:16:17,897 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:16:17,900 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:16:17,901 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:16:17,904 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:16:17,904 - INFO - Staging data loading completed
+2025-10-05 14:16:17,904 - INFO - Transforming dimensions...
+2025-10-05 14:16:17,906 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 14:16:42,927 - INFO - Starting full ETL pipeline...
+2025-10-05 14:16:42,927 - INFO - Initializing database...
+2025-10-05 14:16:42,947 - INFO - Database initialized successfully
+2025-10-05 14:16:42,947 - INFO - Loading staging data...
+2025-10-05 14:16:42,947 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 14:16:42,952 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 14:16:42,952 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 14:16:42,955 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 14:16:42,956 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 14:16:42,959 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 14:16:42,959 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 14:16:42,963 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 14:16:42,963 - INFO - Staging data loading completed
+2025-10-05 14:16:42,963 - INFO - Transforming dimensions...
+2025-10-05 14:16:42,965 - INFO - Dimensions transformation completed
+2025-10-05 14:16:42,965 - INFO - Transforming facts...
+2025-10-05 14:16:42,977 - INFO - Facts transformation completed
+2025-10-05 14:16:42,977 - INFO - Validating data...
+2025-10-05 14:16:42,978 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 14:16:42,978 - INFO - Data validation completed
+2025-10-05 14:16:42,979 - INFO - ETL pipeline completed successfully in 0:00:00.051657
+2025-10-05 20:27:00,420 - INFO - Starting full ETL pipeline...
+2025-10-05 20:27:00,421 - INFO - Loading staging data...
+2025-10-05 20:27:00,423 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 20:27:00,434 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 20:27:00,434 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 20:27:00,438 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 20:27:00,438 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 20:27:00,442 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 20:27:00,443 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 20:27:00,447 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 20:27:00,447 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 20:27:00,450 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 20:27:00,450 - INFO - Staging data loading completed
+2025-10-05 20:27:00,450 - INFO - Transforming dimensions...
+2025-10-05 20:27:00,452 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 20:39:57,044 - INFO - Starting full ETL pipeline...
+2025-10-05 20:39:57,045 - INFO - Initializing database...
+2025-10-05 20:39:57,063 - INFO - Database initialized successfully
+2025-10-05 20:39:57,064 - INFO - Loading staging data...
+2025-10-05 20:39:57,064 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 20:39:57,075 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 20:39:57,075 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 20:39:57,079 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 20:39:57,079 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 20:39:57,082 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 20:39:57,082 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 20:39:57,085 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 20:39:57,086 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 20:39:57,089 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 20:39:57,089 - INFO - Staging data loading completed
+2025-10-05 20:39:57,089 - INFO - Transforming dimensions...
+2025-10-05 20:39:57,091 - INFO - Dimensions transformation completed
+2025-10-05 20:39:57,091 - INFO - Transforming facts...
+2025-10-05 20:39:57,106 - INFO - Facts transformation completed
+2025-10-05 20:39:57,106 - INFO - Validating data...
+2025-10-05 20:39:57,107 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 20:39:57,107 - INFO - Data validation completed
+2025-10-05 20:39:57,108 - INFO - ETL pipeline completed successfully in 0:00:00.063072
+2025-10-05 20:47:18,920 - INFO - Starting full ETL pipeline...
+2025-10-05 20:47:18,920 - INFO - Initializing database...
+2025-10-05 20:47:18,938 - INFO - Database initialized successfully
+2025-10-05 20:47:18,938 - INFO - Loading staging data...
+2025-10-05 20:47:18,939 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 20:47:18,951 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 20:47:18,951 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 20:47:18,954 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 20:47:18,954 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 20:47:18,957 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 20:47:18,957 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 20:47:18,959 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 20:47:18,959 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 20:47:18,963 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 20:47:18,963 - INFO - Staging data loading completed
+2025-10-05 20:47:18,963 - INFO - Transforming dimensions...
+2025-10-05 20:47:18,965 - INFO - Dimensions transformation completed
+2025-10-05 20:47:18,965 - INFO - Transforming facts...
+2025-10-05 20:47:18,979 - INFO - Facts transformation completed
+2025-10-05 20:47:18,979 - INFO - Validating data...
+2025-10-05 20:47:18,980 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 20:47:18,980 - INFO - Data validation completed
+2025-10-05 20:47:18,980 - INFO - ETL pipeline completed successfully in 0:00:00.059799
+2025-10-05 20:54:36,110 - INFO - Starting full ETL pipeline...
+2025-10-05 20:54:36,111 - INFO - Loading staging data...
+2025-10-05 20:54:36,113 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 20:54:36,126 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 20:54:36,127 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 20:54:36,131 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 20:54:36,131 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 20:54:36,135 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 20:54:36,136 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 20:54:36,140 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 20:54:36,140 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 20:54:36,144 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 20:54:36,144 - INFO - Staging data loading completed
+2025-10-05 20:54:36,144 - INFO - Transforming dimensions...
+2025-10-05 20:54:36,146 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 21:10:08,497 - INFO - Starting full ETL pipeline...
+2025-10-05 21:10:08,499 - INFO - Loading staging data...
+2025-10-05 21:10:08,501 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:10:08,515 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:10:08,515 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:10:08,519 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:10:08,519 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:10:08,524 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:10:08,524 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:10:08,529 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:10:08,530 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:10:08,535 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:10:08,535 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:10:08,540 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:10:08,540 - INFO - Staging data loading completed
+2025-10-05 21:10:08,540 - INFO - Transforming dimensions...
+2025-10-05 21:10:08,543 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 21:13:45,755 - INFO - Starting full ETL pipeline...
+2025-10-05 21:13:45,755 - INFO - Initializing database...
+2025-10-05 21:13:45,774 - INFO - Database initialized successfully
+2025-10-05 21:13:45,774 - INFO - Loading staging data...
+2025-10-05 21:13:45,774 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:13:45,782 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:13:45,782 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:13:45,786 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:13:45,786 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:13:45,791 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:13:45,791 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:13:45,794 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:13:45,795 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:13:45,798 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:13:45,799 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:13:45,802 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:13:45,802 - INFO - Staging data loading completed
+2025-10-05 21:13:45,802 - INFO - Transforming dimensions...
+2025-10-05 21:13:45,804 - INFO - Dimensions transformation completed
+2025-10-05 21:13:45,804 - INFO - Transforming facts...
+2025-10-05 21:13:45,818 - INFO - Facts transformation completed
+2025-10-05 21:13:45,818 - INFO - Validating data...
+2025-10-05 21:13:45,820 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:13:45,820 - INFO - Data validation completed
+2025-10-05 21:13:45,820 - INFO - ETL pipeline completed successfully in 0:00:00.064790
+2025-10-05 21:17:41,742 - INFO - Starting full ETL pipeline...
+2025-10-05 21:17:41,742 - INFO - Loading staging data...
+2025-10-05 21:17:41,743 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:17:41,769 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:17:41,769 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:17:41,776 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:17:41,776 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:17:41,779 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:17:41,779 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:17:41,784 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:17:41,784 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:17:41,788 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:17:41,789 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:17:41,792 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:17:41,792 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:17:41,795 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:17:41,796 - INFO - Staging data loading completed
+2025-10-05 21:17:41,796 - INFO - Transforming dimensions...
+2025-10-05 21:17:41,797 - ERROR - ETL pipeline failed: Expecting value: line 1 column 1 (char 0)
+2025-10-05 21:21:06,070 - INFO - Starting full ETL pipeline...
+2025-10-05 21:21:06,071 - INFO - Initializing database...
+2025-10-05 21:21:06,089 - INFO - Database initialized successfully
+2025-10-05 21:21:06,089 - INFO - Loading staging data...
+2025-10-05 21:21:06,089 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:21:06,099 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:21:06,099 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:21:06,102 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:21:06,102 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:21:06,105 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:21:06,105 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:21:06,107 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:21:06,108 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:21:06,111 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:21:06,111 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:21:06,115 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:21:06,115 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:21:06,118 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:21:06,118 - INFO - Staging data loading completed
+2025-10-05 21:21:06,119 - INFO - Transforming dimensions...
+2025-10-05 21:21:06,120 - INFO - Dimensions transformation completed
+2025-10-05 21:21:06,120 - INFO - Transforming facts...
+2025-10-05 21:21:06,134 - INFO - Facts transformation completed
+2025-10-05 21:21:06,135 - INFO - Validating data...
+2025-10-05 21:21:06,136 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:21:06,136 - INFO - Data validation completed
+2025-10-05 21:21:06,136 - INFO - ETL pipeline completed successfully in 0:00:00.065036
+2025-10-05 21:22:14,039 - INFO - Starting full ETL pipeline...
+2025-10-05 21:22:14,040 - INFO - Loading staging data...
+2025-10-05 21:22:14,041 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:22:14,055 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:14,055 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:14,060 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:14,060 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:22:14,064 - ERROR - Error loading data/raw/manual_entry_20251005_212214.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:14,065 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:22:14,068 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:14,068 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:22:14,073 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:22:14,073 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:22:14,077 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:22:14,077 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:14,082 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:14,083 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:22:14,087 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:22:14,087 - INFO - Staging data loading completed
+2025-10-05 21:22:14,087 - INFO - Transforming dimensions...
+2025-10-05 21:22:14,089 - INFO - Dimensions transformation completed
+2025-10-05 21:22:14,089 - INFO - Transforming facts...
+2025-10-05 21:22:14,118 - INFO - Facts transformation completed
+2025-10-05 21:22:14,118 - INFO - Validating data...
+2025-10-05 21:22:14,119 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:22:14,119 - INFO - Data validation completed
+2025-10-05 21:22:14,119 - INFO - ETL pipeline completed successfully in 0:00:00.079124
+2025-10-05 21:22:19,373 - INFO - Starting full ETL pipeline...
+2025-10-05 21:22:19,373 - INFO - Loading staging data...
+2025-10-05 21:22:19,374 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:22:19,383 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:19,383 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:19,390 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:19,391 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:22:19,397 - ERROR - Error loading data/raw/manual_entry_20251005_212214.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:19,397 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:22:19,401 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:19,401 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:22:19,408 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:22:19,409 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:22:19,415 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:22:19,415 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:22:19,420 - ERROR - Error loading data/raw/manual_entry_20251005_212219.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:19,420 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:19,424 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:19,425 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:22:19,428 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:22:19,428 - INFO - Staging data loading completed
+2025-10-05 21:22:19,429 - INFO - Transforming dimensions...
+2025-10-05 21:22:19,431 - INFO - Dimensions transformation completed
+2025-10-05 21:22:19,432 - INFO - Transforming facts...
+2025-10-05 21:22:19,481 - INFO - Facts transformation completed
+2025-10-05 21:22:19,481 - INFO - Validating data...
+2025-10-05 21:22:19,483 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:22:19,483 - INFO - Data validation completed
+2025-10-05 21:22:19,483 - INFO - ETL pipeline completed successfully in 0:00:00.109463
+2025-10-05 21:22:20,824 - INFO - Starting full ETL pipeline...
+2025-10-05 21:22:20,825 - INFO - Loading staging data...
+2025-10-05 21:22:20,825 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:22:20,833 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:20,833 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:20,841 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:20,841 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:22:20,846 - ERROR - Error loading data/raw/manual_entry_20251005_212214.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:20,846 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:22:20,851 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:20,851 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:22:20,859 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:22:20,859 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:22:20,864 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:22:20,865 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:22:20,869 - ERROR - Error loading data/raw/manual_entry_20251005_212220.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:20,869 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:22:20,872 - ERROR - Error loading data/raw/manual_entry_20251005_212219.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:20,872 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:20,876 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:20,876 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:22:20,880 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:22:20,880 - INFO - Staging data loading completed
+2025-10-05 21:22:20,880 - INFO - Transforming dimensions...
+2025-10-05 21:22:20,883 - INFO - Dimensions transformation completed
+2025-10-05 21:22:20,883 - INFO - Transforming facts...
+2025-10-05 21:22:20,930 - INFO - Facts transformation completed
+2025-10-05 21:22:20,930 - INFO - Validating data...
+2025-10-05 21:22:20,931 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:22:20,931 - INFO - Data validation completed
+2025-10-05 21:22:20,931 - INFO - ETL pipeline completed successfully in 0:00:00.106548
+2025-10-05 21:22:21,708 - INFO - Starting full ETL pipeline...
+2025-10-05 21:22:21,708 - INFO - Loading staging data...
+2025-10-05 21:22:21,709 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:22:21,715 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,715 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:21,722 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:21,723 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:22:21,728 - ERROR - Error loading data/raw/manual_entry_20251005_212214.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,728 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:22:21,732 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,734 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:22:21,741 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:22:21,742 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:22:21,746 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:22:21,746 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:22:21,750 - ERROR - Error loading data/raw/manual_entry_20251005_212220.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,750 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-05 21:22:21,753 - ERROR - Error loading data/raw/manual_entry_20251005_212221.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,753 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:22:21,756 - ERROR - Error loading data/raw/manual_entry_20251005_212219.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:21,757 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:21,760 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:21,760 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:22:21,763 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:22:21,764 - INFO - Staging data loading completed
+2025-10-05 21:22:21,764 - INFO - Transforming dimensions...
+2025-10-05 21:22:21,767 - INFO - Dimensions transformation completed
+2025-10-05 21:22:21,767 - INFO - Transforming facts...
+2025-10-05 21:22:21,832 - INFO - Facts transformation completed
+2025-10-05 21:22:21,832 - INFO - Validating data...
+2025-10-05 21:22:21,833 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:22:21,833 - INFO - Data validation completed
+2025-10-05 21:22:21,833 - INFO - ETL pipeline completed successfully in 0:00:00.124687
+2025-10-05 21:22:23,057 - INFO - Starting full ETL pipeline...
+2025-10-05 21:22:23,058 - INFO - Loading staging data...
+2025-10-05 21:22:23,059 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:22:23,066 - ERROR - Error loading data/raw/manual_entry_20251005_211741.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,066 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:23,075 - INFO - Loaded 8 records from manual_shift_report_oct_15_2025.csv
+2025-10-05 21:22:23,075 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:22:23,080 - ERROR - Error loading data/raw/manual_entry_20251005_212214.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,080 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:22:23,083 - ERROR - Error loading data/raw/manual_shift_report_20251005_210929.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,084 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:22:23,088 - INFO - Loaded 40 records from manual_shift_report_oct_2024.csv
+2025-10-05 21:22:23,088 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:22:23,093 - INFO - Loaded 8 records from manual_shift_report_oct_2025.csv
+2025-10-05 21:22:23,093 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:22:23,098 - ERROR - Error loading data/raw/manual_entry_20251005_212220.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,098 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-05 21:22:23,102 - ERROR - Error loading data/raw/manual_entry_20251005_212221.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,102 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-05 21:22:23,105 - ERROR - Error loading data/raw/manual_entry_20251005_212223.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,105 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:22:23,111 - ERROR - Error loading data/raw/manual_entry_20251005_212219.csv: table stg_manual_shift_reports has no column named battery_swap
+2025-10-05 21:22:23,112 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:23,116 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:22:23,116 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:22:23,119 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:22:23,119 - INFO - Staging data loading completed
+2025-10-05 21:22:23,119 - INFO - Transforming dimensions...
+2025-10-05 21:22:23,121 - INFO - Dimensions transformation completed
+2025-10-05 21:22:23,121 - INFO - Transforming facts...
+2025-10-05 21:22:23,183 - INFO - Facts transformation completed
+2025-10-05 21:22:23,183 - INFO - Validating data...
+2025-10-05 21:22:23,184 - INFO - Reconciliation check: 4 date/driver combinations have both manual and VOI data
+2025-10-05 21:22:23,184 - INFO - Data validation completed
+2025-10-05 21:22:23,184 - INFO - ETL pipeline completed successfully in 0:00:00.126384
+2025-10-05 21:25:05,459 - INFO - Starting full ETL pipeline...
+2025-10-05 21:25:05,459 - INFO - Initializing database...
+2025-10-05 21:25:05,477 - INFO - Database initialized successfully
+2025-10-05 21:25:05,477 - INFO - Loading staging data...
+2025-10-05 21:25:05,477 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:25:05,483 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-05 21:25:05,483 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-05 21:25:05,486 - ERROR - Error loading data/raw/manual_shift_report_oct_15_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-05 21:25:05,486 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:25:05,489 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-05 21:25:05,489 - INFO - Loading manual shift file: data/raw/manual_shift_report_20251005_210929.csv
+2025-10-05 21:25:05,493 - INFO - Loaded 1 records from manual_shift_report_20251005_210929.csv
+2025-10-05 21:25:05,493 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-05 21:25:05,495 - ERROR - Error loading data/raw/manual_shift_report_oct_2024.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-05 21:25:05,495 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-05 21:25:05,498 - ERROR - Error loading data/raw/manual_shift_report_oct_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-05 21:25:05,498 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:25:05,503 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-05 21:25:05,503 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-05 21:25:05,508 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-05 21:25:05,509 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-05 21:25:05,512 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-05 21:25:05,512 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:25:05,516 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-05 21:25:05,517 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:25:05,521 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:25:05,521 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:25:05,524 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:25:05,524 - INFO - Staging data loading completed
+2025-10-05 21:25:05,524 - INFO - Transforming dimensions...
+2025-10-05 21:25:05,526 - INFO - Dimensions transformation completed
+2025-10-05 21:25:05,526 - INFO - Transforming facts...
+2025-10-05 21:25:05,533 - INFO - Facts transformation completed
+2025-10-05 21:25:05,534 - INFO - Validating data...
+2025-10-05 21:25:05,535 - INFO - Data validation completed
+2025-10-05 21:25:05,536 - INFO - ETL pipeline completed successfully in 0:00:00.076281
+2025-10-05 21:25:18,822 - INFO - Starting full ETL pipeline...
+2025-10-05 21:25:18,823 - INFO - Loading staging data...
+2025-10-05 21:25:18,824 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:25:18,836 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-05 21:25:18,836 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:25:18,839 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-05 21:25:18,839 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:25:18,843 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-05 21:25:18,843 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-05 21:25:18,846 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-05 21:25:18,846 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-05 21:25:18,852 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-05 21:25:18,852 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:25:18,855 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-05 21:25:18,856 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:25:18,859 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:25:18,859 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:25:18,863 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:25:18,863 - INFO - Staging data loading completed
+2025-10-05 21:25:18,863 - INFO - Transforming dimensions...
+2025-10-05 21:25:18,865 - INFO - Dimensions transformation completed
+2025-10-05 21:25:18,865 - INFO - Transforming facts...
+2025-10-05 21:25:18,878 - INFO - Facts transformation completed
+2025-10-05 21:25:18,879 - INFO - Validating data...
+2025-10-05 21:25:18,880 - INFO - Data validation completed
+2025-10-05 21:25:18,880 - INFO - ETL pipeline completed successfully in 0:00:00.057519
+2025-10-05 21:44:06,553 - INFO - Starting full ETL pipeline...
+2025-10-05 21:44:06,554 - INFO - Loading staging data...
+2025-10-05 21:44:06,556 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-05 21:44:06,569 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-05 21:44:06,570 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-05 21:44:06,573 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-05 21:44:06,573 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-05 21:44:06,577 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-05 21:44:06,578 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-05 21:44:06,581 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-05 21:44:06,581 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-05 21:44:06,585 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-05 21:44:06,585 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-05 21:44:06,588 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-05 21:44:06,589 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-05 21:44:06,593 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-05 21:44:06,593 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-05 21:44:06,598 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-05 21:44:06,598 - INFO - Staging data loading completed
+2025-10-05 21:44:06,598 - INFO - Transforming dimensions...
+2025-10-05 21:44:06,600 - INFO - Dimensions transformation completed
+2025-10-05 21:44:06,600 - INFO - Transforming facts...
+2025-10-05 21:44:06,609 - INFO - Facts transformation completed
+2025-10-05 21:44:06,610 - INFO - Validating data...
+2025-10-05 21:44:06,611 - INFO - Data validation completed
+2025-10-05 21:44:06,611 - INFO - ETL pipeline completed successfully in 0:00:00.056843
+2025-10-06 14:36:24,267 - INFO - Starting full ETL pipeline...
+2025-10-06 14:36:24,269 - INFO - Loading staging data...
+2025-10-06 14:36:24,271 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-06 14:36:24,296 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-06 14:36:24,296 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-06 14:36:24,300 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-06 14:36:24,300 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-06 14:36:24,305 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-06 14:36:24,305 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-06 14:36:24,310 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-06 14:36:24,310 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-06 14:36:24,313 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-06 14:36:24,313 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-06 14:36:24,317 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-06 14:36:24,317 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143624.csv
+2025-10-06 14:36:24,322 - INFO - Loaded 1 records from manual_entry_20251006_143624.csv
+2025-10-06 14:36:24,323 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-06 14:36:24,328 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-06 14:36:24,329 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-06 14:36:24,332 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-06 14:36:24,332 - INFO - Staging data loading completed
+2025-10-06 14:36:24,332 - INFO - Transforming dimensions...
+2025-10-06 14:36:24,334 - INFO - Dimensions transformation completed
+2025-10-06 14:36:24,334 - INFO - Transforming facts...
+2025-10-06 14:36:24,347 - INFO - Facts transformation completed
+2025-10-06 14:36:24,348 - INFO - Validating data...
+2025-10-06 14:36:24,349 - INFO - Data validation completed
+2025-10-06 14:36:24,349 - INFO - ETL pipeline completed successfully in 0:00:00.080282
+2025-10-23 19:58:53,203 - INFO - Starting full ETL pipeline...
+2025-10-23 19:58:53,203 - INFO - Loading staging data...
+2025-10-23 19:58:53,205 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-23 19:58:53,211 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-23 19:58:53,212 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-23 19:58:53,214 - ERROR - Error loading data/raw/manual_shift_report_oct_15_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 19:58:53,214 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-23 19:58:53,218 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-23 19:58:53,218 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143628.csv
+2025-10-23 19:58:53,222 - INFO - Loaded 1 records from manual_entry_20251006_143628.csv
+2025-10-23 19:58:53,222 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-23 19:58:53,225 - ERROR - Error loading data/raw/manual_shift_report_oct_2024.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 19:58:53,225 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_210351.csv
+2025-10-23 19:58:53,228 - ERROR - Error loading data/raw/manual_entry_20251006_210351.csv: table stg_manual_shift_reports has no column named quality_check
+2025-10-23 19:58:53,228 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-23 19:58:53,230 - ERROR - Error loading data/raw/manual_shift_report_oct_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 19:58:53,230 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-23 19:58:53,233 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-23 19:58:53,233 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-23 19:58:53,237 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-23 19:58:53,237 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-23 19:58:53,240 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-23 19:58:53,241 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-23 19:58:53,244 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-23 19:58:53,244 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143624.csv
+2025-10-23 19:58:53,247 - INFO - Loaded 1 records from manual_entry_20251006_143624.csv
+2025-10-23 19:58:53,247 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-23 19:58:53,250 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-23 19:58:53,250 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-23 19:58:53,254 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-23 19:58:53,254 - INFO - Staging data loading completed
+2025-10-23 19:58:53,254 - INFO - Transforming dimensions...
+2025-10-23 19:58:53,257 - INFO - Dimensions transformation completed
+2025-10-23 19:58:53,257 - INFO - Transforming facts...
+2025-10-23 19:58:53,287 - INFO - Facts transformation completed
+2025-10-23 19:58:53,287 - INFO - Validating data...
+2025-10-23 19:58:53,289 - INFO - Data validation completed
+2025-10-23 19:58:53,289 - INFO - ETL pipeline completed successfully in 0:00:00.085313
+2025-10-23 20:26:11,663 - INFO - Starting full ETL pipeline...
+2025-10-23 20:26:11,664 - INFO - Loading staging data...
+2025-10-23 20:26:11,666 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-23 20:26:11,673 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-23 20:26:11,673 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-23 20:26:11,676 - ERROR - Error loading data/raw/manual_shift_report_oct_15_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 20:26:11,676 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-23 20:26:11,679 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-23 20:26:11,679 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143628.csv
+2025-10-23 20:26:11,683 - INFO - Loaded 1 records from manual_entry_20251006_143628.csv
+2025-10-23 20:26:11,683 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-23 20:26:11,685 - ERROR - Error loading data/raw/manual_shift_report_oct_2024.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 20:26:11,685 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_210351.csv
+2025-10-23 20:26:11,688 - ERROR - Error loading data/raw/manual_entry_20251006_210351.csv: table stg_manual_shift_reports has no column named quality_check
+2025-10-23 20:26:11,688 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-23 20:26:11,690 - ERROR - Error loading data/raw/manual_shift_report_oct_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 20:26:11,690 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-23 20:26:11,694 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-23 20:26:11,694 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-23 20:26:11,698 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-23 20:26:11,698 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-23 20:26:11,702 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-23 20:26:11,702 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-23 20:26:11,706 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-23 20:26:11,706 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143624.csv
+2025-10-23 20:26:11,709 - INFO - Loaded 1 records from manual_entry_20251006_143624.csv
+2025-10-23 20:26:11,709 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-23 20:26:11,712 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-23 20:26:11,713 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-23 20:26:11,716 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-23 20:26:11,716 - INFO - Staging data loading completed
+2025-10-23 20:26:11,716 - INFO - Transforming dimensions...
+2025-10-23 20:26:11,718 - INFO - Dimensions transformation completed
+2025-10-23 20:26:11,719 - INFO - Transforming facts...
+2025-10-23 20:26:11,729 - INFO - Facts transformation completed
+2025-10-23 20:26:11,729 - INFO - Validating data...
+2025-10-23 20:26:11,730 - INFO - Data validation completed
+2025-10-23 20:26:11,731 - INFO - ETL pipeline completed successfully in 0:00:00.066153
+2025-10-23 21:29:55,265 - INFO - Starting full ETL pipeline...
+2025-10-23 21:29:55,268 - INFO - Loading staging data...
+2025-10-23 21:29:55,269 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_211741.csv
+2025-10-23 21:29:55,278 - INFO - Loaded 1 records from manual_entry_20251005_211741.csv
+2025-10-23 21:29:55,278 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_15_2025.csv
+2025-10-23 21:29:55,281 - ERROR - Error loading data/raw/manual_shift_report_oct_15_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 21:29:55,281 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212214.csv
+2025-10-23 21:29:55,285 - INFO - Loaded 1 records from manual_entry_20251005_212214.csv
+2025-10-23 21:29:55,285 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143628.csv
+2025-10-23 21:29:55,289 - INFO - Loaded 1 records from manual_entry_20251006_143628.csv
+2025-10-23 21:29:55,289 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2024.csv
+2025-10-23 21:29:55,291 - ERROR - Error loading data/raw/manual_shift_report_oct_2024.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 21:29:55,291 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_210351.csv
+2025-10-23 21:29:55,294 - ERROR - Error loading data/raw/manual_entry_20251006_210351.csv: table stg_manual_shift_reports has no column named quality_check
+2025-10-23 21:29:55,294 - INFO - Loading manual shift file: data/raw/manual_shift_report_oct_2025.csv
+2025-10-23 21:29:55,297 - ERROR - Error loading data/raw/manual_shift_report_oct_2025.csv: table stg_manual_shift_reports has no column named normale_swaps
+2025-10-23 21:29:55,297 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212220.csv
+2025-10-23 21:29:55,302 - INFO - Loaded 1 records from manual_entry_20251005_212220.csv
+2025-10-23 21:29:55,302 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212221.csv
+2025-10-23 21:29:55,307 - INFO - Loaded 1 records from manual_entry_20251005_212221.csv
+2025-10-23 21:29:55,307 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212223.csv
+2025-10-23 21:29:55,311 - INFO - Loaded 1 records from manual_entry_20251005_212223.csv
+2025-10-23 21:29:55,311 - INFO - Loading manual shift file: data/raw/manual_entry_20251005_212219.csv
+2025-10-23 21:29:55,314 - INFO - Loaded 1 records from manual_entry_20251005_212219.csv
+2025-10-23 21:29:55,315 - INFO - Loading manual shift file: data/raw/manual_entry_20251006_143624.csv
+2025-10-23 21:29:55,318 - INFO - Loaded 1 records from manual_entry_20251006_143624.csv
+2025-10-23 21:29:55,319 - INFO - Loading VOI daily file: data/raw/voi_daily_report_2024-10-05.csv
+2025-10-23 21:29:55,322 - INFO - Loaded 24 records from voi_daily_report_2024-10-05.csv
+2025-10-23 21:29:55,322 - INFO - Loading VOI monthly file: data/raw/voi_monthly_report_september_2024.csv
+2025-10-23 21:29:55,326 - INFO - Loaded 28 records from voi_monthly_report_september_2024.csv
+2025-10-23 21:29:55,326 - INFO - Staging data loading completed
+2025-10-23 21:29:55,326 - INFO - Transforming dimensions...
+2025-10-23 21:29:55,328 - INFO - Dimensions transformation completed
+2025-10-23 21:29:55,329 - INFO - Transforming facts...
+2025-10-23 21:29:55,338 - INFO - Facts transformation completed
+2025-10-23 21:29:55,339 - INFO - Validating data...
+2025-10-23 21:29:55,340 - INFO - Data validation completed
+2025-10-23 21:29:55,340 - INFO - ETL pipeline completed successfully in 0:00:00.071983
