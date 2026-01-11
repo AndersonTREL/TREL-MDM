@@ -1,6 +1,7 @@
-
 import prisma from '@/lib/prisma'
 import Link from 'next/link'
+
+export const dynamic = 'force-dynamic'
 
 async function getDevices() {
     const devices = await prisma.device.findMany({
