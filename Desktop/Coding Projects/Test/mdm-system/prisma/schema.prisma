@@ -1,0 +1,115 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Device {
+  id           String   @id @default(cuid())
+  assetTag     String   @unique
+  serialNumber String?  @unique
+  imei         String?  @unique
+  platform     String   // "Android", "iOS"
+  manufacturer String
+  model        String
+  osVersion    String?
+  purchaseDate DateTime?
+  warrantyEnd  DateTime?
+  status       String   // "In Stock", "Assigned", "Repair", "Retired", "Lost"
+  location     String?
+  notes        String?
+
+  // Android Metadata
+  androidVersion String?
+  securityPatch  String?
+  appVersion     String?
+  lastSyncAt     DateTime?
+  
+  assignment   Assignment?
+  history      AssignmentHistory[]
+  syncLogs     SyncLog[]
+  enrollmentTokens EnrollmentToken[]
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SyncLog {
+  id        String   @id @default(cuid())
+  device    Device?  @relation(fields: [deviceId], references: [id])
+  deviceId  String?
+  
+  timestamp DateTime @default(now())
+  source    String   // "Android Driver App"
+  status    String   // "Success", "Failed"
+  payload   String   // JSON string of data
+  userId    String?  // Driver ID if known
+}
+
+model EnrollmentToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  // Optional pre-link
+  device    Device?  @relation(fields: [deviceId], references: [id])
+  deviceId  String?
+  
+  usedAt    DateTime?
+}
+
+model Person {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  role      String?  // "Employee", "Admin", "Manager"
+  station   String?
+  
+  assignment Assignment[]
+  historyFrom AssignmentHistory[] @relation("FromPerson")
+  historyTo   AssignmentHistory[] @relation("ToPerson")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Assignment {
+  id        String   @id @default(cuid())
+  device    Device   @relation(fields: [deviceId], references: [id])
+  deviceId  String   @unique // One current assignment per device
+  person    Person   @relation(fields: [personId], references: [id])
+  personId  String
+  
+  assignedAt DateTime @default(now())
+  notes      String?
+
+  @@index([personId])
+}
+
+model AssignmentHistory {
+  id            String   @id @default(cuid())
+  device        Device   @relation(fields: [deviceId], references: [id])
+  deviceId      String
+  
+  fromPerson    Person?  @relation("FromPerson", fields: [fromPersonId], references: [id])
+  fromPersonId  String?
+  
+  toPerson      Person?  @relation("ToPerson", fields: [toPersonId], references: [id])
+  toPersonId    String? // Nullable if assigned to "Stock" (Unassigned)
+  
+  transferredAt DateTime @default(now())
+  transferredBy String   // Admin username/email
+  reason        String?
+  notes         String?
+  
+  @@index([deviceId])
+  @@index([fromPersonId])
+  @@index([toPersonId])
+}
