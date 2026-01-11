@@ -33,7 +33,7 @@ Railway usually builds your app automatically. However, for the first run, you n
    ```bash
    npx prisma generate && npm run build
    ```
-3. Update the **Deploy Command** (Start Command) to:
+3. Update the **Deploy Command** to:
    ```bash
    npx prisma migrate deploy && npm start
    ```
